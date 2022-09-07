@@ -13,7 +13,8 @@
                     <Border  BorderBrush="Black" CornerRadius="8" BorderThickness="2"  
                              TextBlock.Foreground="Black" 
                              TextBlock.FontSize="25" 
-                             TextBlock.TextAlignment="Center">
+                             TextBlock.TextAlignment="Center"
+                             Name="border">
                         <Border.Background>
                             <LinearGradientBrush>
                                 <GradientStopCollection>
@@ -24,6 +25,53 @@
                         </Border.Background>
                         <ContentPresenter RecognizesAccessKey="True" Margin="{TemplateBinding Padding}"/>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="DarkRed"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="WhiteSmoke"></Setter>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Button_RedNonBorder" TargetType="Button"
+           BasedOn="{StaticResource Style_Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+                    <Border  BorderBrush="Black" CornerRadius="8" BorderThickness="2"  
+                             TextBlock.Foreground="Black" 
+                             TextBlock.FontSize="25" 
+                             TextBlock.TextAlignment="Center"
+                             Name="border">
+                        <Border.Background>
+                            <LinearGradientBrush>
+                                <GradientStopCollection>
+                                    <GradientStop Offset="0" Color="DarkRed"></GradientStop>
+                                    <GradientStop Offset="1" Color="WhiteSmoke"></GradientStop>
+                                </GradientStopCollection>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid>
+                            <TextBlock HorizontalAlignment="Center" Padding="{TemplateBinding Padding}" FontSize="30">
+                        <ContentPresenter></ContentPresenter>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="DarkRed"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="WhiteSmoke"></Setter>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -109,7 +157,8 @@
                     <Border  BorderBrush="Black" CornerRadius="8" BorderThickness="2"  
                              TextBlock.Foreground="Black" 
                              TextBlock.FontSize="25" 
-                             TextBlock.TextAlignment="Center">
+                             TextBlock.TextAlignment="Center"
+                             Name="border">
                         <Border.Background>
                             <LinearGradientBrush>
                                 <GradientStopCollection>
@@ -120,6 +169,17 @@
                         </Border.Background>
                         <ContentPresenter RecognizesAccessKey="True" Margin="{TemplateBinding Padding}"/>
                     </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="Purple"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="WhiteSmoke"></Setter>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
